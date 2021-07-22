@@ -1,0 +1,27 @@
+{
+  "name": "webgl-pong",
+  "version": "1.0.0",
+  "description": "Pong in WebGL",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dscham/WebGL-Pong.git"
+  },
+  "keywords": [
+    "pong",
+    "typescript",
+    "web-gl"
+  ],
+  "author": "dscham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dscham/WebGL-Pong/issues"
+  },
+  "homepage": "https://github.com/dscham/WebGL-Pong#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
