@@ -38,7 +38,7 @@ export default class Renderer {
 
         const gl_positionBuffer: WebGLBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, gl_positionBuffer);
-
+        
         // three 2d points
         let positions: Float32Array = new Float32Array([
             0, 0,
@@ -59,10 +59,10 @@ export default class Renderer {
     }
 
     private createWebGlShader(gl: WebGLRenderingContext, type: number, source: string) {
-        let shader = gl.createShader(type);
+        const shader: WebGLShader = gl.createShader(type);
         gl.shaderSource(shader, source);
         gl.compileShader(shader);
-        let success = gl.getShaderParameter(shader, gl.COMPILE_STATUS);
+        const success = gl.getShaderParameter(shader, gl.COMPILE_STATUS);
         if (success) {
           return shader;
         }
@@ -72,11 +72,11 @@ export default class Renderer {
     }
     
     private createWebGlProgram(gl: WebGLRenderingContext, vertexShader: WebGLShader, fragmentShader: WebGLShader) {
-        var program = gl.createProgram();
+        const program: WebGLProgram = gl.createProgram();
         gl.attachShader(program, vertexShader);
         gl.attachShader(program, fragmentShader);
         gl.linkProgram(program);
-        var success = gl.getProgramParameter(program, gl.LINK_STATUS);
+        const success = gl.getProgramParameter(program, gl.LINK_STATUS);
         if (success) {
           return program;
         }
@@ -86,6 +86,7 @@ export default class Renderer {
       }
 }
 
+// for glsl-canvas VS Code Plugin to lint GLSL
 function glsl(shader: TemplateStringsArray): string {
     return shader.toString();
 }
